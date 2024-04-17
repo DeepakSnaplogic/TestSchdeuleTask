@@ -1,0 +1,75 @@
+{
+    "job_class": "PipelineJob",
+    "job_name": "TestPipeline Task",
+    "note": "",
+    "parameters": {
+        "enabled": true,
+        "job_type": "standard",
+        "notification": {
+            "recipients": "dkumar@snaplogic.com",
+            "slack_recipients": [
+                {
+                    "channel": [],
+                    "user": []
+                }
+            ],
+            "states": [
+                "Failed",
+                "Stopped",
+                "Suspended"
+            ]
+        },
+        "pipeline_parameters": {},
+        "pipeline_path": "TestPipeline",
+        "snaplex_path": "Cloud"
+    },
+    "schedule": {
+        "repeat": {
+            "blackout_dates": [],
+            "by": "minutes",
+            "cron": {
+                "day": "*",
+                "day_of_week": "*",
+                "hour": "*",
+                "minute": "0",
+                "month": "*"
+            },
+            "ends": {
+                "occurrences": 10,
+                "when": "after"
+            },
+            "every": 1,
+            "on": {
+                "day": []
+            }
+        },
+        "start_date": "2024-04-17",
+        "start_time": "19:30:48",
+        "time_zone": "Asia/Kolkata"
+    },
+    "trigger": {
+        "repeat": {
+            "blackout_dates": [],
+            "by": "minutes",
+            "cron": {
+                "day": "*",
+                "day_of_week": "*",
+                "hour": "*",
+                "minute": "0",
+                "month": "*"
+            },
+            "ends": {
+                "occurrences": 10,
+                "when": "after"
+            },
+            "every": 1,
+            "on": {
+                "day": []
+            }
+        },
+        "start_date": "2024-04-17",
+        "start_time": "19:30:48",
+        "time_zone": "Asia/Kolkata"
+    },
+    "trigger_type": "ScheduleTrigger"
+}
