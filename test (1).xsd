@@ -1,0 +1,95 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SYNC_ITEM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CNTROLEAREA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BSR">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="VERB"/>
+                    <xs:element type="xs:string" name="NOUN"/>
+                    <xs:element type="xs:string" name="REVISION"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SENDER">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="LOGICALID"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DATETIME">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="DATE"/>
+                    <xs:element type="xs:int" name="TIME"/>
+                    <xs:element type="xs:byte" name="TIMEZONE"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DATAAREA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SYNC_ITEM">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ROW">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="TIPAITID"/>
+                          <xs:element type="xs:string" name="ACTION"/>
+                          <xs:element name="ITEMWHSE_IW">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ROW" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:byte" name="IWWHSCDE"/>
+                                      <xs:element type="xs:int" name="IWCUSUNO"/>
+                                      <xs:element type="xs:string" name="IWDEMTYPE"/>
+                                      <xs:element type="xs:string" name="IWPOLICYCOMMENT"/>
+                                      <xs:element type="xs:string" name="ACTION"/>
+                                      <xs:element name="ITEMWHSECOSTHIST_IH">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="ROW" maxOccurs="unbounded" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element type="xs:string" name="IHCOSTTYPE"/>
+                                                  <xs:element type="xs:int" name="IHVLFTIM_DATE"/>
+                                                  <xs:element type="xs:float" name="IHCOST"/>
+                                                  <xs:element type="xs:string" name="IHCURR"/>
+                                                  <xs:element type="xs:int" name="IHCUSUNO"/>
+                                                  <xs:element type="xs:byte" name="IHCHGRSN"/>
+                                                  <xs:element type="xs:string" name="IHSTATUS" minOccurs="0"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
